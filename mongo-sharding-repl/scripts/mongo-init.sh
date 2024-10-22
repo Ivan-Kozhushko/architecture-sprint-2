@@ -44,6 +44,8 @@ rs.initiate(
 ')
 echo "Результат инициализации shard2: $result"
 
+sleep 10
+
 echo "Настройка базы данных и коллекции..."
 result=$(docker exec -it mongos_router mongosh --port 27050 --eval '
 sh.addShard( "shard1/shard1-0:27040,shard1-1:27041,shard1-2:27042");

@@ -1,3 +1,4 @@
+#ips 173.18.0.10-19, ports 17-20
 name: mongo-sharding
 services:
 
@@ -85,6 +86,8 @@ services:
     networks:
       app-network:
         ipv4_address: 173.18.0.14
+    volumes:
+      - router-data:/data/db
     command:
       [
         "mongos",
@@ -129,5 +132,6 @@ networks:
 
 volumes:
   config-data:
+  router-data:
   shard1-data:
   shard2-data:
